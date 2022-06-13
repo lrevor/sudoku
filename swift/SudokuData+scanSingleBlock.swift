@@ -12,7 +12,7 @@ extension sudokuData {
                         if row != clearRow {
                             if clearRowBlockFlagMatch(row: clearRow, block: block, number: number) {
                                 found = true
-                                print("Row \(row) has value \(number) in only block \(block): was able to clear values from nearby rows")
+                                if verbose { print("Row \(row) has value \(number) in only block \(block): was able to clear values from nearby rows") }
                            }
                         }
                     }
@@ -27,7 +27,7 @@ extension sudokuData {
                         if col != clearCol {
                             if clearColBlockFlagMatch(col: clearCol, block: block, number: number) {
                                 found = true
-                                print("Column \(col) has value \(number) in only block \(block): was able to clear values from nearby columns")
+                                if verbose { print("Column \(col) has value \(number) in only block \(block): was able to clear values from nearby columns") }
                             }
                         }
                     }

@@ -8,6 +8,7 @@ LIST        =   main.swift    \
 			SudokuData+getters.swift \
 			SudokuData+setters.swift \
 			SudokuData+scanSingle.swift \
+			SudokuData+scanSingleFlag.swift \
 			SudokuData+scanSingleBlock.swift \
 			SudokuData+scanDouble.swift
 

@@ -10,6 +10,7 @@ import AppKit
 
 class sudokuData {
     var data = [sudoku_node]()
+    var verbose = false
     
     init() {
         for row in 1...GS {

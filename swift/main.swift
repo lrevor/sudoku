@@ -5,24 +5,36 @@ let grid = sudokuData()
 for argument in CommandLine.arguments {
     switch argument {
     case "-solve":
-        grid.debug()
         solve()
-        grid.debug()
  
     case "-debug":
         grid.debug()
+
+    case "-verbose":
+        grid.verbose = true
+
+    case "-grid":
+        grid.gridDump()
+
+    case "-flags":
+        grid.flagDump()
+
+    case "-valid":
+        grid.isValid()
 
     case "-solveone":
         solveOne()
 
     default:
-        print("Unexpected argument: \(argument)")
+        if grid.verbose { print("Unexpected argument: \(argument)") }
     }
 }
 
 func solveOne() -> Bool {
     var found = false
-    if grid.scanSingle() {
+    if grid.scanSingleFlag() {
+        found = true
+    } else if grid.scanSingle() {
         found = true
     } else if grid.scanDouble() {
         found = true

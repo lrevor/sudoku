@@ -11,7 +11,7 @@ extension sudokuData {
                         if (getRowFlagMatchCount(row: row, flag: flagMask(number: i)) == 2) && (getRowFlagMatchCount(row: row, flag: flagMask(number: j)) == 2) {
                             clearedFlags = setRowFlagMatch(row: row, flag: flag)
                             if clearedFlags > 0 {
-                                print("Values \(i) and \(j) appear in only 2 nodes in row \(row): clearing other flags")
+                                if verbose { print("Values \(i) and \(j) appear in only 2 nodes in row \(row): clearing other flags") }
                                 return true
                             }
                         }
@@ -22,7 +22,7 @@ extension sudokuData {
                         if (getColFlagMatchCount(col: col, flag: flagMask(number: i)) == 2) && (getColFlagMatchCount(col: col, flag: flagMask(number: j)) == 2) {
                             clearedFlags = setColFlagMatch(col: col, flag: flag)
                             if clearedFlags > 0 {
-                                print("Values \(i) and \(j) appear in only 2 nodes in column \(col): clearing other flags")
+                                if verbose { print("Values \(i) and \(j) appear in only 2 nodes in column \(col): clearing other flags") }
                                 return true
                             }
                        }
@@ -33,7 +33,7 @@ extension sudokuData {
                         if (getBlockFlagMatchCount(block: block, flag: flagMask(number: i)) == 2) && (getBlockFlagMatchCount(block: block, flag: flagMask(number: j)) == 2) {
                             clearedFlags = setBlockFlagMatch(block: block, flag: flag)
                             if clearedFlags > 0 {
-                                print("Values \(i) and \(j) appear in only 2 nodes in block \(block): clearing other flags")
+                                if verbose { print("Values \(i) and \(j) appear in only 2 nodes in block \(block): clearing other flags") }
                                 return true
                             }
                         }
