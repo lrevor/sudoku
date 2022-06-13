@@ -3,7 +3,11 @@ NAME        = sudoku
 LIST        =   main.swift    \
             SudokuData.swift \
 			SudokuNode.swift \
-			SudokuTestData.swift
+			SudokuTestData.swift \
+			SudokuData+debug.swift \
+			SudokuData+scanSingle.swift \
+			SudokuData+scanSingleBlock.swift \
+			SudokuData+scanDouble.swift
 
 all:    $(NAME)
 
