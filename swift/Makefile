@@ -5,6 +5,8 @@ LIST        =   main.swift    \
 			SudokuNode.swift \
 			SudokuTestData.swift \
 			SudokuData+debug.swift \
+			SudokuData+getters.swift \
+			SudokuData+setters.swift \
 			SudokuData+scanSingle.swift \
 			SudokuData+scanSingleBlock.swift \
 			SudokuData+scanDouble.swift
