@@ -2,10 +2,12 @@ import Foundation
 
 let grid = sudokuData()
 
+var previousArgument = ""
+var caseLoaded = false
 for argument in CommandLine.arguments {
     switch argument {
     case "-solve":
-        solve()
+        if caseLoaded {solve()}
  
     case "-debug":
         grid.debug()
@@ -23,11 +25,19 @@ for argument in CommandLine.arguments {
         grid.isValid()
 
     case "-solveone":
-        solveOne()
+        if caseLoaded {solveOne()}
+
+    case "-testcase":
+        if grid.verbose { print("-testcase received") }
 
     default:
         if grid.verbose { print("Unexpected argument: \(argument)") }
+        if (previousArgument == "-testcase") {
+            grid.setData(testCase: Int(argument) ?? 1)
+            caseLoaded = true
+        }
     }
+    previousArgument = argument
 }
 
 func solveOne() -> Bool {

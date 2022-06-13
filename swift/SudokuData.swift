@@ -19,8 +19,12 @@ class sudokuData {
                 data.insert(node, at: node.getIndex())
             }
         }
-        for node in data {
-            setNumber(number: testdata[1][node.getIndex()], row: node.mRow, col: node.mCol)
+    }
+    func setData(testCase: Int) {
+        if ((testCase >= 0) && (testCase < numTestData)) {
+            for node in data {
+                setNumber(number: testdata[testCase][node.getIndex()], row: node.mRow, col: node.mCol)
+            }
         }
     }
 
