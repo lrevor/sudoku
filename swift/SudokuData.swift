@@ -12,6 +12,7 @@ class sudokuData {
     var data = [sudoku_node]()
     var verbose = false
     
+    // Initializer.  create the nodes and populate them into the array based on where they are located on the grid
     init() {
         for row in 1...GS {
             for col in 1...GS {
@@ -20,6 +21,7 @@ class sudokuData {
             }
         }
     }
+    // populate the grid based on a predefined test case
     func setData(testCase: Int) {
         if ((testCase >= 0) && (testCase < numTestData)) {
             for node in data {
@@ -27,15 +29,4 @@ class sudokuData {
             }
         }
     }
-
-
-//****************************************************************************************
-//***************************************************************************************
-//*********** Solvers ***********
-//****************************************************************************************
-//****************************************************************************************
-
-    // TODO: Determine if a block has a value in only one row/col, if so clear from other blocks in row/col
-    // TODO: Determine if a value appears in 2 columns/rows in 2 aligned blocks, if so, clear it from the 3rd block for those rows/cols
-    
 }

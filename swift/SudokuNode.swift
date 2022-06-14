@@ -21,10 +21,6 @@ class sudoku_node {
     var mBlock = 0
     var mBlockRow = 0
     var mBlockCol = 0
-    var mFirstRowForBlock = 0
-    var mLastRowForBlock = 0
-    var mFirstColForBlock = 0
-    var mLastColForBlock = 0
     var mFlag = 0b111111111
     
     init(row: Int, col: Int) {
@@ -33,10 +29,6 @@ class sudoku_node {
         mBlockRow = ((mRow-1) / BS)+1
         mBlockCol = ((mCol-1) / BS)+1
         mBlock = (mBlockRow-1)*BS + mBlockCol
-        //mFirstRowForBlock = row - ((row-1)%BS)
-        //mLastRowForBlock = mFirstRowForBlock + BS - 1
-        //mFirstColForBlock = col - ((col-1)%BS)
-        //mLastColForBlock = mFirstColForBlock + BS - 1
         mFlag = 0b111111111
     }
     func setNumber(number: Int) {

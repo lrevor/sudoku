@@ -1,7 +1,7 @@
     // For each row, column and block, check to see if a pair appears in only 2 nodes
     // if so, clear other flags from those nodes
 extension sudokuData {
-    func scanDouble() -> Bool {
+    func scanDoubleBlock() -> Bool {
         var clearedFlags = 0
         for i in 1...GS-1 {
             for j in i+1...GS {

@@ -10,7 +10,9 @@ LIST        =   main.swift    \
 			SudokuData+scanSingle.swift \
 			SudokuData+scanSingleFlag.swift \
 			SudokuData+scanSingleBlock.swift \
-			SudokuData+scanDouble.swift
+			SudokuData+scanDoubleBlock.swift \
+			SudokuData+scanBlockSingle.swift \
+			SudokuData+scanBlockDouble.swift
 
 TEST = tests/in.1
 
