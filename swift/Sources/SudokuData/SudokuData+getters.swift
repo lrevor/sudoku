@@ -1,11 +1,13 @@
+import SudokuNode
+
 extension sudokuData {
-    func getNode(row: Int, col: Int) -> sudoku_node {
+    public func getNode(row: Int, col: Int) -> sudoku_node {
         return data[getIndex(row: row, col: col)]
     }
-    func getIndex(row: Int, col: Int) -> Int {
+    public func getIndex(row: Int, col: Int) -> Int {
         return col-1+GS*(row-1)
     }
-    func getRowFlagMatchCount(row: Int, flag: Int) -> Int {
+    public func getRowFlagMatchCount(row: Int, flag: Int) -> Int {
         var count = 0
         for node in data {
             if (node.mRow == row) && ((node.mFlag & flag) == flag) {
@@ -14,7 +16,7 @@ extension sudokuData {
         }
         return count
     }
-    func getColFlagMatchCount(col: Int, flag: Int) -> Int {
+    public func getColFlagMatchCount(col: Int, flag: Int) -> Int {
         var count = 0
         for node in data {
             if (node.mCol == col) && ((node.mFlag & flag) == flag) {
@@ -23,7 +25,7 @@ extension sudokuData {
         }
         return count
     }
-    func getRowFlagUniqueBlockMatch(row: Int, number: Int) -> Int {
+    public func getRowFlagUniqueBlockMatch(row: Int, number: Int) -> Int {
         var count = 0
         var match = 0
         let flag = flagMask(number: number)
@@ -41,7 +43,7 @@ extension sudokuData {
             return 0
         }
     }
-    func getColFlagUniqueBlockMatch(col: Int, number: Int) -> Int {
+    public func getColFlagUniqueBlockMatch(col: Int, number: Int) -> Int {
         var count = 0
         var match = 0
         let flag = flagMask(number: number)
@@ -59,7 +61,7 @@ extension sudokuData {
             return 0
         }
     }
-    func getBlockFlagMatchCount(block: Int, flag: Int) -> Int {
+    public func getBlockFlagMatchCount(block: Int, flag: Int) -> Int {
         var count = 0
         for node in data {
             if (node.mBlock == block) && ((node.mFlag & flag) == flag) {

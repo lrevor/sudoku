@@ -1,5 +1,7 @@
+import SudokuNode
+
 extension sudokuData {
-    func scanSingleFlag() -> Bool {
+    public func scanSingleFlag() -> Bool {
         // Check to see if any nodes only have 1 flag left.  If so, set it
         for node in data {
             if (node.flagCount() == 1) && (node.mNumber == 0) {

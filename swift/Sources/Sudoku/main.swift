@@ -1,4 +1,5 @@
 import Foundation 
+import SudokuData 
 
 let grid = sudokuData()
 

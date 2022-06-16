@@ -1,15 +1,17 @@
+import SudokuNode
+
 //****************************************************************************************
 //***************************************************************************************
 //*********** Debug Functions ***********
 //****************************************************************************************
 //****************************************************************************************
 extension sudokuData {
-    func debug() {
+    public func debug() {
         gridDump()
         flagDump()
         isValid()
     }
-    func gridDump() {
+    public func gridDump() {
         print("-------------")
         for row in 1...GS {
             for col in 1...GS {
@@ -25,7 +27,7 @@ extension sudokuData {
         }
         print("-------------")
     }
-    func flagDump() {
+    public func flagDump() {
         print("-------------------------------------------")
         for row in 1...GS {
             print("| ", terminator: "")
@@ -55,7 +57,7 @@ extension sudokuData {
             }
         }
     }
-    func isValid() -> Bool {
+    public func isValid() -> Bool {
         var isValid = true
         for value in 1...GS {
             for row in 1...GS {

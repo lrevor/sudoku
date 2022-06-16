@@ -1,5 +1,7 @@
+import SudokuNode
+
 extension sudokuData {
-    func scanSingle() -> Bool {
+    public func scanSingle() -> Bool {
         // for each row, column, and block, check to see if any values only appear once
         // If so, set it
         for value in 1...GS {

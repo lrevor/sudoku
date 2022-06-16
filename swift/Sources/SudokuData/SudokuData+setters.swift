@@ -1,5 +1,7 @@
+import SudokuNode
+
 extension sudokuData {
-    func setNumber(number: Int, row: Int, col: Int) {
+    public func setNumber(number: Int, row: Int, col: Int) {
         for node in data {
             if node.sameNode(row: row, col: col) {
                 // If this is the node, set the number
@@ -14,7 +16,7 @@ extension sudokuData {
             }
         }
     }
-    func setRowFlagMatch(row: Int, flag: Int) -> Int {
+    public func setRowFlagMatch(row: Int, flag: Int) -> Int {
         var clearedFlags = 0
         for node in data {
             if (node.mRow == row) && ((node.mFlag & flag)>0) {
@@ -24,7 +26,7 @@ extension sudokuData {
         }
         return clearedFlags
     }
-    func setColFlagMatch(col: Int, flag: Int) -> Int {
+    public func setColFlagMatch(col: Int, flag: Int) -> Int {
         var clearedFlags = 0
         for node in data {
             if (node.mCol == col) && ((node.mFlag & flag)>0) {
@@ -34,7 +36,7 @@ extension sudokuData {
         }
         return clearedFlags
     }
-    func clearRowBlockFlagMatch(row: Int, block: Int, number: Int) -> Bool {
+    public func clearRowBlockFlagMatch(row: Int, block: Int, number: Int) -> Bool {
         var found = false
         let flag = flagMask(number: number)
         for node in data {
@@ -45,7 +47,7 @@ extension sudokuData {
         }
         return found
     }
-    func clearColBlockFlagMatch(col: Int, block: Int, number: Int) -> Bool {
+    public func clearColBlockFlagMatch(col: Int, block: Int, number: Int) -> Bool {
         var found = false
         let flag = flagMask(number: number)
         for node in data {
@@ -56,7 +58,7 @@ extension sudokuData {
         }
         return found
     }
-    func setBlockFlagMatch(block: Int, flag: Int) -> Int {
+    public func setBlockFlagMatch(block: Int, flag: Int) -> Int {
         var clearedFlags = 0
         for node in data {
             if (node.mBlock == block) && ((node.mFlag & flag)>0) {

@@ -1,6 +1,8 @@
+import SudokuNode
+
     // Determines if a column has a value in only one block, if so, clear value from other columns in the same block
 extension sudokuData {
-    func scanSingleBlock() -> Bool {
+    public func scanSingleBlock() -> Bool {
         var found = false
         for number in 1...GS {
             for row in 1...GS {
